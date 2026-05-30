@@ -4,9 +4,9 @@ Personal collection of [Claude Code](https://docs.claude.com/en/docs/claude-code
 
 ## `/code-review-turbo-max`
 
-An enhanced version of [`code-review-turbo`](https://gist.github.com/nolanlawson/4150b0ca9640654c256b324fac0d5253) by [@nolanlawson](https://github.com/nolanlawson).
+An expanded version of [`code-review-turbo`](https://gist.github.com/nolanlawson/4150b0ca9640654c256b324fac0d5253) by [@nolanlawson](https://github.com/nolanlawson).
 
-The original runs a multi-reviewer code review and cross-references the findings to separate real bugs from hallucinations. `code-review-turbo-max` extends it from a smaller reviewer pool to a **five-reviewer panel**, then has Claude act as an objective judge over all of their findings.
+The original runs a multi-reviewer code review and cross-references the findings to separate real bugs from hallucinations. `code-review-turbo-max` expands it from a smaller reviewer pool to a **five-reviewer panel**, then has Claude act as an objective judge over all of their findings.
 
 ### The five reviewers
 
@@ -16,7 +16,7 @@ The original runs a multi-reviewer code review and cross-references the findings
 | 2 | **Claude sub-agent** (generated prompt) | Bug-focused `REVIEW_PROMPT` |
 | 3 | **Codex** (generated prompt) | Same bug-focused `REVIEW_PROMPT` |
 | 4 | **Claude pr-review-toolkit specialists** | Quality dimensions (tests, silent failures, type design, comments) |
-| 5 | **Codex `requesting-code-review` skill** | Plan alignment, architecture, production-readiness |
+| 5 | **Codex `requesting-code-review` skill** ([superpowers](https://github.com/obra/superpowers)) | Plan alignment, architecture, production-readiness |
 
 Reviewers 2 and 3 share the exact same bug-focused prompt so their results can be directly compared. Reviewers 4 and 5 deliberately use *different* lenses so the perspectives don't overlap.
 
@@ -41,7 +41,8 @@ If no PR number is given, it detects the PR from the current branch.
 - [`gh`](https://cli.github.com/) CLI authenticated against the repo
 - [Cursor Bugbot](https://cursor.com/bugbot) enabled on the repo
 - [`codex`](https://github.com/openai/codex) CLI available locally
-- The `pr-review-toolkit` plugin (for reviewer #4) and Codex's `requesting-code-review` skill (for reviewer #5)
+- The `pr-review-toolkit` plugin (for reviewer #4)
+- Codex's `requesting-code-review` skill (for reviewer #5), which ships as part of [superpowers](https://github.com/obra/superpowers) by [@obra](https://github.com/obra)
 
 ### Credit
 
