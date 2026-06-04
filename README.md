@@ -2,6 +2,11 @@
 
 Personal collection of [Claude Code](https://docs.claude.com/en/docs/claude-code) skills.
 
+## Manual verification checklist
+
+- [ ] Confirm the task produced a commit.
+- [ ] Confirm the working tree is clean.
+
 ## `/code-review-turbo-max`
 
 An expanded version of [`code-review-turbo`](https://gist.github.com/nolanlawson/4150b0ca9640654c256b324fac0d5253) by [@nolanlawson](https://github.com/nolanlawson).
